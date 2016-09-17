@@ -3,10 +3,10 @@ package thread;
 /**
  * Created by admin on 2016/9/16.
  */
-public class LiftOff implements Runnable{
-    protected int countDown = 10 ;
-    private static  int taskCount = 0 ;
-    private final int id = taskCount ++;
+public class LiftOff implements Runnable {
+    protected int countDown = 10;
+    private static int taskCount = 0;
+    private final int id = taskCount++;
 
     public LiftOff() {
     }
@@ -15,14 +15,14 @@ public class LiftOff implements Runnable{
         this.countDown = countDown;
     }
 
-    public String status(){
+    public String status() {
 
         return "#" + id + "(" + (countDown > 0 ? countDown : "Liftoff!") + "),";
     }
 
     public void run() {
-        while(countDown -- > 0 ){
-            System.out.println(status());
+        while (countDown-- > 0) {
+            System.out.print(status());
             Thread.yield();
 
         }

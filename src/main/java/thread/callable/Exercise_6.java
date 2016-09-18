@@ -2,6 +2,7 @@ package thread.callable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.*;
 
 /**
@@ -12,8 +13,10 @@ public class Exercise_6 implements Callable<String> {
     private final int id = taskCount ++ ;
     @Override
     public String call() throws Exception {
-        TimeUnit.SECONDS.sleep(1);
-        System.out.printf(String.format("#%d(%d)", id, 5));
+        Random random = new Random();
+        int randomInt = random.nextInt(10);
+        TimeUnit.SECONDS.sleep(randomInt);
+        System.out.printf(String.format("#%d(%d)", id, randomInt));
         return null;
     }
 

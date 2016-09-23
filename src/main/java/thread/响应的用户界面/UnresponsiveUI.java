@@ -1,4 +1,4 @@
-package thread.相应的用户界面;
+package thread.响应的用户界面;
 
 import java.io.IOException;
 
